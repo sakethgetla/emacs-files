@@ -1,15 +1,26 @@
 
-;; Added by Package.el.  This must come before configurations of
+;; Addedx Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
+
 (package-initialize)
 
 (elpy-enable)
 (global-linum-mode t)
 
+(global-set-key (kbd "M-n")
+    (lambda () (interactive) (next-line 8)))
+
+(global-set-key (kbd "M-p")
+    (lambda () (interactive) (previous-line 8)))
+
+(tool-bar-mode -1)
 
 
+
+
+(global-set-key (kbd "M-s") (kbd "M-b M-d"))
 
 (global-set-key (kbd "C-c C-m") 'mc/edit-lines)
 
@@ -25,8 +36,11 @@
 (global-set-key (kbd "C-j") (kbd "C-u 0 C-k"))
 (global-set-key (kbd "C-S-k") (kbd "C-a C-k"))
 
+(global-set-key (kbd "C-i") (kbd "C-e RET"))
+
 (global-set-key (kbd "C-,") "(")
 (global-set-key (kbd "C-.") ")")
+
 
 (global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
 (global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
@@ -58,3 +72,4 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+(put 'upcase-region 'disabled nil)

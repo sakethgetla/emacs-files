@@ -1,0 +1,49 @@
+sudo apt-get remove --auto-remove emacs23-lucid emacs23-nox
+
+
+
+git hub/////////////////
+
+Set Up Git:
+git config --global user.name "Your Name"
+git config --global user.email "youremail@domain.com"
+
+other commands
+git clone (url)
+git add (file names)
+git commit -m "(committed message)
+git push -u origin master
+git remote add origin master (url)
+
+
+////////////////
+
+
+
+	
+C-x5f	  --You can open a file in a new frame with 
+C-x0 	  --close this window
+C-x1 	  --close other window
+C-xC-s 	  --save file
+C-x3	  --Split window Horizotally ||
+C-x2	  --Split window vertically =
+C-xu 	  --undo
+C-x52	  --new frame
+C-xg	  --quit command
+C-SPC	  --set mark
+C-k	--kill to end of line
+C-x C-LEFT      --go back
+C-c mc	   --multi curser on selected
+
+
+
+
+M-x customize-group then package -- load new repo for Plugins
+
+  C-M-n     forward-list  Move forward over a parenthetical group 
+  C-M-p     backward-list  Move backward over a parenthetical group 
+  C-M-f     forward-sexp Move forward over a balanced expression
+  C-M-b     backward-sexp  Move backward over a balanced expression
+  C-M-k     kill-sexp  Kill balanced expression forward
+  C-M-SPC   mark-sexp  Put the mark at the end of the sexp.
+

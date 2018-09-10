@@ -9,13 +9,16 @@
 (global-linum-mode t)
 
 
-(global-set-key (kbd "C-c m c") 'mc/edit-lines)
+
+
+(global-set-key (kbd "C-c C-m") 'mc/edit-lines)
 
 (global-set-key (kbd "C-'") (kbd "C-y")) ;;paste
 
 (global-set-key (kbd "C-;") (kbd "M-w")) ;;copy
 (global-set-key (kbd "C-:") (kbd "C-e C-S-a M-w"))
 
+(global-set-key (kbd "C-c C-c") ((kbd "C-c C-m C-a") "#"))
 
 (global-set-key (kbd "C-S-k") (kbd "C-a C-k"))
 
@@ -38,7 +41,11 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes (quote (tsdh-dark)))
+ '(ansi-color-faces-vector
+   [default default default italic underline success warning error])
+ '(ansi-color-names-vector
+   ["black" "#d55e00" "#009e73" "#f8ec59" "#0072b2" "#cc79a7" "#56b4e9" "white"])
+ '(custom-enabled-themes (quote (adwaita)))
  '(inhibit-startup-screen t)
  '(package-archives
    (quote

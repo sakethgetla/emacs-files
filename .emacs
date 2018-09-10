@@ -18,7 +18,7 @@
 (global-set-key (kbd "C-;") (kbd "M-w")) ;;copy
 (global-set-key (kbd "C-:") (kbd "C-e C-S-a M-w"))
 
-(global-set-key (kbd "C-c C-c") ((kbd "C-c C-m C-a") "#"))
+;;(global-set-key (kbd "C-c C-c") ((kbd "C-c C-m C-a") "#"))
 
 (global-set-key (kbd "C-S-k") (kbd "C-a C-k"))
 

@@ -17,12 +17,13 @@
 
 (tool-bar-mode -1)
 
-
+(global-unset-key "\C-z")
+(global-set-key "\C-z" 'advertised-undo)
 
 
 (global-set-key (kbd "M-s") (kbd "M-b M-d"))
 
-(global-set-key (kbd "C-c C-m") 'mc/edit-lines)
+(global-set-key (kbd "C-c m c") 'mc/edit-lines)
 
 (global-set-key (kbd "C-'") (kbd "C-y")) ;;paste
 
@@ -37,6 +38,9 @@
 (global-set-key (kbd "C-S-k") (kbd "C-a C-k"))
 
 (global-set-key (kbd "C-i") (kbd "C-e RET"))
+
+
+
 
 (global-set-key (kbd "C-,") "(")
 (global-set-key (kbd "C-.") ")")
@@ -59,13 +63,13 @@
    [default default default italic underline success warning error])
  '(ansi-color-names-vector
    ["black" "#d55e00" "#009e73" "#f8ec59" "#0072b2" "#cc79a7" "#56b4e9" "white"])
- '(custom-enabled-themes (quote (adwaita)))
+ '(custom-enabled-themes (quote (tango-dark)))
  '(inhibit-startup-screen t)
  '(package-archives
    (quote
     (("gnu" . "http://elpa.gnu.org/packages/")
      ("melpa-stable" . "https://stable.melpa.org/packages/"))))
- '(package-selected-packages (quote (multiple-cursors elpy))))
+ '(package-selected-packages (quote (jedi java-imports multiple-cursors elpy))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

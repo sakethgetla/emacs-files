@@ -2,7 +2,8 @@ sudo apt-get remove --auto-remove emacs23-lucid emacs23-nox
 
 
 
-git hub/////////////////
+git hub
+/////////////////
 
 Set Up Git:
 git config --global user.name "Your Name"
@@ -19,7 +20,8 @@ git remote add origin master (url)
 ////////////////
 
 
-
+C-x h                             (M-x mark-whole-buffer)
+C-M-\                             (M-x indent-region)
 	
 C-x5f	  --You can open a file in a new frame with 
 C-x0 	  --close this window

@@ -6,8 +6,12 @@
 
 (package-initialize)
 
+
 (elpy-enable)
 (global-linum-mode t)
+
+(require 'expand-region)
+(global-set-key (kbd "C-=") 'er/expand-region)
 
 (global-set-key (kbd "M-n")
     (lambda () (interactive) (next-line 8)))
@@ -77,3 +81,4 @@
  ;; If there is more than one, they won't work right.
  )
 (put 'upcase-region 'disabled nil)
+(put 'upcase-region 'disabled t)

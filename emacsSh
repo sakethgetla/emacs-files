@@ -1,7 +1,5 @@
 sudo apt-get remove --auto-remove emacs23-lucid emacs23-nox
 
-
-
 git hub
 /////////////////
 
@@ -19,6 +17,9 @@ git remote add origin master (url)
 
 ////////////////
 
+ "C-=" --expand-region 
+
+C-r  --backward search
 
 C-x h                             (M-x mark-whole-buffer)
 C-M-\                             (M-x indent-region)
@@ -33,6 +34,7 @@ C-xu 	  --undo
 C-x52	  --new frame
 C-xg	  --quit command
 C-SPC	  --set mark
+C-x 4 f --find file in other window
 C-k	--kill to end of line
 C-x C-LEFT      --go back
 C-c mc	   --multi curser on selected

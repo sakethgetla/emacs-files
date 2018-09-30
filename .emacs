@@ -2,6 +2,7 @@
 
 ;; INSTALL PACKAGES
 ;; --------------------------------------
+(setq ring-bell-function 'ignore)
 
 (require 'package)
 
@@ -26,17 +27,37 @@
     elpy ;; add the elpy package
     material-theme))
 
-
 (elpy-enable)
 
-  (require 'flymake-python-pyflakes)
-  (add-hook 'python-mode-hook 'flymake-python-pyflakes-load)
-
-  (setq flymake-python-pyflakes-executable "flake8")
+(setq elpy-rpc-python-command "python3")
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;  (require 'flymake-python-pyflakes)
+;;  (add-hook 'python-mode-hook 'flymake-python-pyflakes-load)
+;;
+;;  (setq flymake-python-pyflakes-executable "flake8")
+;;
+;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+(add-hook 'after-init-hook #'global-flycheck-mode)
+;;
+;;(when (require 'flycheck nil t)
+;;  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
+;;  (add-hook 'elpy-mode-hook 'flycheck-mode))
 
+(defun beginning-of-line-or-indentation ()
+  "move to beginning of line, or indentation"
+  (interactive)
+  (if (bolp)
+    (beginning-of-line-text)
+    (beginning-of-line)))
+
+
+
+;;;;;;;;;;;;;;;;
+
+
+(global-set-key (kbd "C-a") 'beginning-of-line-or-indentation)
 
 (require 'expand-region)
 (global-set-key (kbd "C-=") 'er/expand-region)
@@ -60,30 +81,27 @@
 (global-set-key (kbd "C-'") (kbd "C-y")) ;;paste
 
 (global-set-key (kbd "C-;") (kbd "M-w")) ;;copy
-(global-set-key (kbd "C-:") (kbd "C-e C-S-a M-w"))
+(global-set-key (kbd "C-:") (kbd "C-e M-S-m M-w"))
 
 ;;(global-set-key (kbd "C-c C-c") ((kbd "C-c C-m C-a") "#"))
 
 (global-set-key (kbd "C-S-k") (kbd "C-a C-k"))
 
 (global-set-key (kbd "C-j") (kbd "C-u 0 C-k"))
-(global-set-key (kbd "C-S-k") (kbd "C-a C-k"))
+
 
 (global-set-key (kbd "C-i") (kbd "C-e RET"))
 
 
-
+(global-set-key (kbd "C-S-i") 'comment-or-uncomment-region)
 
 (global-set-key (kbd "C-,") "(")
 (global-set-key (kbd "C-.") ")")
-
 
 (global-set-key (kbd "S-C-<left>") 'shrink-window-horizontally)
 (global-set-key (kbd "S-C-<right>") 'enlarge-window-horizontally)
 (global-set-key (kbd "S-C-<up>") 'shrink-window)
 (global-set-key (kbd "S-C-<down>") 'enlarge-window)
-
-
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -105,14 +123,15 @@
    [default bold shadow italic underline bold bold-italic bold])
  '(ansi-color-names-vector
    (vector "#ffffff" "#f36c60" "#8bc34a" "#fff59d" "#4dd0e1" "#b39ddb" "#81d4fa" "#263238"))
+ '(custom-enabled-themes (quote (material-light)))
  '(custom-safe-themes
    (quote
-    ("732b807b0543855541743429c9979ebfb363e27ec91e82f463c91e68c772f6e3" default)))
+    ("a24c5b3c12d147da6cef80938dca1223b7c7f70f2f382b26308eba014dc4833a" "732b807b0543855541743429c9979ebfb363e27ec91e82f463c91e68c772f6e3" default)))
  '(fci-rule-color "#37474f")
  '(hl-sexp-background-color "#1c1f26")
  '(package-selected-packages
    (quote
-    (expand-region commenter flymake-python-pyflakes elpy material-theme better-defaults)))
+    (flycheck org etable autodisass-java-bytecode expand-region flymake-python-pyflakes elpy material-theme better-defaults)))
  '(vc-annotate-background nil)
  '(vc-annotate-color-map
    (quote

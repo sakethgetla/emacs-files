@@ -72,7 +72,7 @@
 
 (global-unset-key "\C-z")
 (global-set-key "\C-z" 'advertised-undo)
-
+(global-set-key (kbd "C-S-z") 'redo)
 
 (global-set-key (kbd "M-s") (kbd "M-b M-d"))
 
